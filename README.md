@@ -4,8 +4,10 @@ Estudo sobre Spark
 ## Introdução
 O Spark é muito utilizado quando se precisa processar um grande volume de dados com alta performance e eficiência. Nesse momento, o Pandas pode não ser suficiente. Ou seja, o Spark é uma solução de Big Data. O Spark é uma estrutura de processamento paralelo, muito superior ao Hadoop.
 
-Link da documentação do Spark: https://spark.apache.org/documentation.html
-
+Links úteis:
+1. [Site Spark](https://spark.apache.org)
+2. [Documentação Spark](https://spark.apache.org/documentation.html)
+3. [O'Reilly livros](https://www.oreilly.com/beta-search/?q=pyspark&type=book&order_by=relevance)
 ## Instalação das Ferramentas
 1. Instalação do Java: ``` apt-get install openjdk-8-jdk-headless -qq > /dev/null ``` 
 2. Instalação do Python
@@ -32,10 +34,47 @@ os.environ["SPARK_HOME"] = [CAMINHO_DO_DIRETÓRIO_DO_SPARK]
 Após as configurações acima, podemos importar o SparkSession do pyspark.sql e construir uma sessão do Spark:
 ```
 from pyspark.sql import SparkSession
-spark = SparkSession.builder.master('local[*]').getOrCreate()
+spark = SparkSession.builder.master('local[*]').appName("Iniciando com Spark").getOrCreate()
 ```
 > O parâmetro local[*] significa que serão usados todos os processadores disponíveis na máquina local.
 
 Conferindo a variável *spark*, temos:
 
 ![image](https://user-images.githubusercontent.com/39681960/203611034-7ce2291d-9c89-46dc-a464-1f304eb97741.png)
+
+## Sobre o SparkSession
+Link: [Documentação SparkSession](https://spark.apache.org/docs/latest/api/python/reference/pyspark.sql/api/pyspark.sql.SparkSession.html)
+
+Contém 3 Interfaces:
+1. Dataset: contém os benefícios do DataFrame e do RDD, disponíveis apenas nas linguagens Java e Scala;
+2. DataFrame: registro e armazenamento de tabelas, execução de comandos SQL, leitura de arquivos;
+3. Resilient Distributed Dataset (RDD): coleção de elementos particionados nos nós de um Cluster. É a API de nível mais baixo do Spark.
+
+## Trabalhando com o conjunto de dados
+Link:
+[TSE - Resultado Eleição](https://cdn.tse.jus.br/estatistica/sead/odsele/votacao_candidato_munzona/votacao_candidato_munzona_2022.zip)
+
+1. Feito o download, vamos realizar a descompactação diretamente pelo Notebook:
+```
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
